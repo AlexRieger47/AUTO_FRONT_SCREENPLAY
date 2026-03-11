@@ -11,6 +11,9 @@ public class LoginUI {
 	public static final Target PASSWORD_FIELD =
 			Target.the("campo de contraseña").located(By.cssSelector("#password"));
 
+	public static final Target LOGIN_ERROR_MESSAGE =
+			Target.the("mensaje de error de autenticación").located(By.cssSelector(".auth-error"));
+
 	public static final Target LOGIN_BUTTON =
 			Target.the("botón de inicio de sesión").located(By.cssSelector("button.btn-primary"));
 

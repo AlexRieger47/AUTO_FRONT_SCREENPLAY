@@ -12,6 +12,7 @@ Notas_Explicar_G5.md
 /.gradle/
 /out/
 /bin/
+/archivos/
 
 gradle/wrapper/*.jar
 !gradle/wrapper/gradle-wrapper.jar

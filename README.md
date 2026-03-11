@@ -39,6 +39,8 @@ src/test/
 │   │   └── AbrirUrl.java
 │   ├── questions/              # Preguntas sobre el estado de la UI
 │   │   ├── ElListadoDeTickets.java
+│   │   ├── ElMensajeDeErrorDeLogin.java
+│   │   ├── LaPaginaDeLogin.java
 │   │   └── ElTicketEnElListado.java
 │   ├── models/                 # Modelos de datos de prueba
 │   │   └── TicketModel.java
@@ -57,15 +59,15 @@ src/test/
     └── junit-platform.properties
 ~~~
 
-## Flujo de Prueba Automatizado
+## Escenarios Automatizados
 
-1. Abrir la página de login de SistemaTickets.
-2. Iniciar sesión con credenciales válidas de prueba.
-3. Verificar que se visualiza la lista de tickets.
-4. Navegar al formulario de creación de ticket.
-5. Completar título y descripción.
-6. Enviar el ticket.
-7. Verificar que el ticket creado aparece en la lista.
+La suite actual valida cinco comportamientos principales:
+
+1. Inicio de sesión exitoso y visualización del listado de tickets.
+2. Rechazo de inicio de sesión con credenciales inválidas.
+3. Redirección al login cuando se intenta abrir `/tickets` sin sesión activa.
+4. Redirección al listado de tickets cuando un usuario normal intenta abrir `/notifications`.
+5. Creación de ticket y verificación del ticket creado en el listado.
 
 ## Prerrequisitos
 
@@ -123,6 +125,13 @@ target/site/serenity/index.html
 - El navegador y la URL base se configuran en serenity.conf
 - La configuración de reportes Serenity está en build.gradle
 - El proyecto está configurado para ejecutarse con Java 17 y con el wrapper real incluido en el repositorio.
+- La suite usa logging de prueba con Logback para evitar ruido de SLF4J en ejecución.
+
+## Estado Actual de la Suite
+
+- Suite validada localmente con 5 escenarios en verde.
+- Se mantiene el flujo funcional mínimo del taller (`login -> tickets -> crear ticket -> validar ticket`) y se añaden escenarios de endurecimiento de autenticación/autorización.
+- El warning de CDP con Chrome 145 no está rompiendo la ejecución actual; es un desajuste entre la versión del navegador y la versión de Selenium que trae Serenity 4.2.1.
 
 ## VS Code y Java 17
 

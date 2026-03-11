@@ -7,6 +7,8 @@ public final class TestData {
 
 	public static final String DEFAULT_EMAIL = "sofkiano@sofka.com";
 	public static final String DEFAULT_PASSWORD = "12345678";
+	public static final String INVALID_EMAIL = "credenciales.invalidas@sofka.com";
+	public static final String INVALID_PASSWORD = "incorrecta123";
 
 	private static final String BASE_URL = "http://localhost:5173";
 	private static final DateTimeFormatter TITLE_TIMESTAMP_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
