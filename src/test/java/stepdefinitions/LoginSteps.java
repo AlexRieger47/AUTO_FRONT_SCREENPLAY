@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.is;
 
 public class LoginSteps {
 
-	@Given("existe un usuario registrado con credenciales validas en SistemaTickets")
+	@Given("existe un usuario de prueba previamente registrado en SistemaTickets")
 	public void existeUnUsuarioRegistradoConCredencialesValidasEnSistemaTickets() {
 		theActorCalled("el usuario").attemptsTo(PaginaDeLogin.abrir());
 	}

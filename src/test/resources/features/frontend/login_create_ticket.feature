@@ -5,7 +5,7 @@ Feature: Flujo de inicio de sesion y creacion de tickets
 	Para dar seguimiento a solicitudes de soporte
 
 	Scenario: Inicio de sesion exitoso y acceso al modulo de tickets
-		Given existe un usuario registrado con credenciales validas en SistemaTickets
+		Given existe un usuario de prueba previamente registrado en SistemaTickets
 		When el usuario inicia sesion en SistemaTickets
 		Then el usuario visualiza el listado de tickets
 

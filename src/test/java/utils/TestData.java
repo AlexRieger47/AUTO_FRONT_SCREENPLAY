@@ -23,6 +23,10 @@ public final class TestData {
 	}
 
 	public static String getBaseUrl() {
-		return BASE_URL;
+		String configuredBaseUrl = System.getProperty("webdriver.base.url");
+		if (configuredBaseUrl == null || configuredBaseUrl.isBlank()) {
+			return BASE_URL;
+		}
+		return configuredBaseUrl;
 	}
 }
